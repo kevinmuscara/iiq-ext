@@ -13,13 +13,26 @@ document.addEventListener('keydown', function(event) {
     let issue_spare = document.querySelector(`[ng-click="$ctrl.IssueSpare()"]`);
     let return_spare = document.querySelector(`[ng-click="$ctrl.ReturnSpare()"]`);
 
-    if(issue_spare) issue_spare.click();
-    else if(return_spare) return_spare.click();
+    if(issue_spare) {
+      issue_spare.click();
+      setTimeout(() => {
+        document.querySelector(`[ng-click="$select.clear($event)"]`).click();
+      }, 1500);
+    } else if(return_spare) { 
+      return_spare.click();
+    }
   }
 
   if(settings.altREnabled && (event.altKey && event.key == '®')) {
     event.preventDefault();
-    document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
+
+    let confirm_button = document.querySelector(`[ng-click="$ctrl.onConfirmIssueClick($ctrl.SetIssueConfirmed)"]`);
+    if(confirm_button == null) {
+      document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
+    } else {
+      confirm_button.click();
+      document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
+    }
   }
 
   if(settings.altCEndabled && (event.altKey && event.key == 'ç')) {
