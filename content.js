@@ -7,7 +7,7 @@ document.addEventListener('keydown', function(event) {
     document.querySelector('[data-testid=btn-global-search]').click();
   }
 
-  if(settings.altSEnabled && (event.altKey && event.key === 's')) {
+  if(settings.altSEnabled && (event.altKey && event.key == 'ß')) {
     event.preventDefault();
 
     let issue_spare = document.querySelector(`[ng-click="$ctrl.IssueSpare()"]`);
@@ -17,12 +17,12 @@ document.addEventListener('keydown', function(event) {
     else if(return_spare) return_spare.click();
   }
 
-  if(settings.altREnabled && (event.altKey && event.key === 'r')) {
+  if(settings.altREnabled && (event.altKey && event.key == '®')) {
     event.preventDefault();
     document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
   }
 
-  if(settings.altCEndabled && (event.altKey && event.key === 'c')) {
+  if(settings.altCEndabled && (event.altKey && event.key == 'ç')) {
     event.preventDefault();
     document.querySelector(`[ng-click="$ctrl.onConfirmIssueClick($ctrl.SetIssueConfirmed)"]`).click();
   }
