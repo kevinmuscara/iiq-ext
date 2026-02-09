@@ -4,7 +4,7 @@ document.addEventListener('keydown', function(event) {
     document.querySelector('[data-testid=btn-global-search]').click();
   }
 
-  if(settings.altSEnabled && (event.altKey && event.key == 'ß')) {
+  if(settings.altSEnabled && (event.altKey && event.key == 's')) {
     event.preventDefault();
 
     let issue_spare = document.querySelector(`[ng-click="$ctrl.IssueSpare()"]`);
@@ -20,7 +20,7 @@ document.addEventListener('keydown', function(event) {
     }
   }
 
-  if(settings.altREnabled && (event.altKey && event.key == '®')) {
+  if(settings.altREnabled && (event.altKey && event.key == 'r')) {
     event.preventDefault();
 
     let confirm_button = document.querySelector(`[ng-click="$ctrl.onConfirmIssueClick($ctrl.SetIssueConfirmed)"]`);
@@ -32,7 +32,7 @@ document.addEventListener('keydown', function(event) {
     }
   }
 
-  if(settings.altCEndabled && (event.altKey && event.key == 'ç')) {
+  if(settings.altCEndabled && (event.altKey && event.key == 'c')) {
     event.preventDefault();
     document.querySelector(`[ng-click="$ctrl.onConfirmIssueClick($ctrl.SetIssueConfirmed)"]`).click();
   }
