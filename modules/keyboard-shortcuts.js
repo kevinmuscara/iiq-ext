@@ -37,7 +37,9 @@ document.addEventListener('keydown', function(event) {
       document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
     } else {
       confirm_button.click();
-      document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
+      setTimeout(() => {
+        document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
+      }, 2500);
     }
   }
 
