@@ -1,5 +1,5 @@
-let settings = { ctrlKEnabled: true, disableFlyoutsEnabled: true };
-chrome.storage.sync.get({ ctrlKEnabled: true, disableFlyoutsEnabled: true }, (items) => settings = items);
+let settings = { ctrlKEnabled: true, disableFlyoutsEnabled: true, altSEnabled: true, altREnabled: true, altCEndabled: true };
+chrome.storage.sync.get({ ctrlKEnabled: true, disableFlyoutsEnabled: true, altSEnabled: true, altREnabled: true, altCEndabled: true }, (items) => settings = items);
 
 document.addEventListener('keydown', function(event) {
   if (settings.ctrlKEnabled && (event.ctrlKey || event.metaKey) && event.key === 'k') {
@@ -7,7 +7,7 @@ document.addEventListener('keydown', function(event) {
     document.querySelector('[data-testid=btn-global-search]').click();
   }
 
-  if(event.altKey && event.key === 's') {
+  if(settings.altSEnabled && (event.altKey && event.key === 's')) {
     event.preventDefault();
 
     let issue_spare = document.querySelector(`[ng-click="$ctrl.IssueSpare()"]`);
@@ -17,12 +17,12 @@ document.addEventListener('keydown', function(event) {
     else if(return_spare) return_spare.click();
   }
 
-  if(event.altKey && event.key === 'r') {
+  if(settings.altREnabled && (event.altKey && event.key === 'r')) {
     event.preventDefault();
     document.querySelector(`[class="btn-resolve-ticket btn btn-primary"]`).click();
   }
 
-  if(event.altKey && event.key === 'c') {
+  if(settings.altCEndabled && (event.altKey && event.key === 'c')) {
     event.preventDefault();
     document.querySelector(`[ng-click="$ctrl.onConfirmIssueClick($ctrl.SetIssueConfirmed)"]`).click();
   }
