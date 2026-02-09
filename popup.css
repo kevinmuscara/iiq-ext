@@ -1,0 +1,33 @@
+/* IIQ-themed popup styles */
+:root{
+  --iiq-blue:#0072CE;
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#6b6b6b;
+}
+html,body{margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);}
+body{width:340px;color:#222}
+
+.iiq-header{display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,var(--iiq-blue),#005bb5);padding:12px 14px;color:white}
+.iiq-logo{width:36px;height:36px;object-fit:contain;border-radius:4px;background:rgba(255,255,255,0.06);padding:4px}
+.iiq-brand{display:flex;flex-direction:column}
+.iiq-title{font-weight:700;font-size:14px;line-height:1}
+.iiq-sub{font-size:11px;opacity:0.9}
+
+.iiq-main{padding:12px}
+.settings{display:flex;flex-direction:column;gap:10px}
+.setting{display:flex;align-items:center;justify-content:space-between;padding:10px;background:var(--card);border-radius:8px;border:1px solid rgba(16,24,40,0.04);box-shadow:0 1px 0 rgba(16,24,40,0.02)}
+.setting-label{font-size:13px;color:#111;font-weight:600}
+
+/* Toggle */
+.toggle-switch{position:relative;display:inline-block;width:44px;height:24px}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;inset:0;background:#d0d5dd;border-radius:999px;transition:background .18s}
+.slider:before{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;background:white;border-radius:50%;transition:transform .18s}
+.toggle-switch input:checked + .slider{background:var(--iiq-blue)}
+.toggle-switch input:checked + .slider:before{transform:translateX(20px)}
+
+.iiq-footer{text-align:center;padding:8px 12px;font-size:11px;color:var(--muted)}
+
+/* small responsive tweaks */
+@media (max-width:360px){body{width:320px}}

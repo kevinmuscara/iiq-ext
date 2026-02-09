@@ -1,2 +1,0 @@
-# iiq-ext
-IIQ Extension
