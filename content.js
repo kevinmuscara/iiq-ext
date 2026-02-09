@@ -1,7 +1,9 @@
+let settings = { ctrlKEnabled: true, disableFlyoutsEnabled: true };
+chrome.storage.sync.get({ ctrlKEnabled: true, disableFlyoutsEnabled: true }, (items) => settings = items);
+
 document.addEventListener('keydown', function(event) {
-  if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+  if (settings.ctrlKEnabled && (event.ctrlKey || event.metaKey) && event.key === 'k') {
     event.preventDefault();
-    
     document.querySelector('[data-testid=btn-global-search]').click();
   }
 });
@@ -9,6 +11,10 @@ document.addEventListener('keydown', function(event) {
 let previousUrl = window.location.href;
 
 function checkAndRedirectFlyout() {
+  if (!settings.disableFlyoutsEnabled) {
+    return;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const flyoutType = params.get('flyout-type');
   const flyoutId = params.get('flyout-id');
