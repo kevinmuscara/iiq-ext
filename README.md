@@ -13,3 +13,5 @@ A Utility extension for iiQ that enhances functionality and workflows.
 - **Confirm Issue Shortcut**: Added `Alt + C` keyboard shortcut to quickly confirm the issue of a ticket to be able to resolve.
 
 - **Resolve Ticket Shortcut**: Added `Alt + R` keyboard shortcut to quickly resolve tickets.
+
+- **Copy Buttons**: Added a paperclip icon to the Asset Tag and Serial Number fields on asset information.
