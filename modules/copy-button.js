@@ -43,5 +43,7 @@ const add_copy_button = (element) => {
 
 const asset_and_serial = () => {
    const elements = document.querySelectorAll('span[ng-bind="$ctrl.Asset.AssetTag"]:not(.copied-button-added), span[ng-bind="$ctrl.Asset.SerialNumber"]:not(.copied-button-added)');
-   elements.forEach(add_copy_button);
+   if(settings.copyButtonEnabled) {
+     elements.forEach(add_copy_button);
+   }
 }

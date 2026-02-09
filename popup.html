@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="popup.css">
-  <title>IIQ Extension</title>
+  <title>iiQ Ticketing+</title>
 </head>
 <body>
   <header class="iiq-header">
     <img src="logo.png" alt="IIQ" class="iiq-logo" />
     <div class="iiq-brand">
-      <div class="iiq-title">iiQ Extension</div>
+      <div class="iiq-title">iiQ Ticketing+</div>
       <div class="iiq-sub">by Kevin Muscara</div>
     </div>
   </header>
@@ -18,7 +18,13 @@
   <main class="iiq-main">
     <div class="settings">
       <div class="setting">
-        <div class="setting-label">Disable Flyouts</div>
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Disable Flyouts</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Redirects flyout modals to full pages instead of opening them as overlays</div>
+          </div>
+        </div>
         <label class="toggle-switch">
           <input type="checkbox" id="disableFlyoutsToggle" checked>
           <span class="slider"></span>
@@ -26,7 +32,42 @@
       </div>
 
       <div class="setting">
-        <div class="setting-label">Ctrl+K Global Search</div>
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Copy Buttons</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Adds copy-to-clipboard buttons next to asset tags and serial numbers</div>
+          </div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="copyButtonToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting">
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Title Updater</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Updates page title to show ticket number or asset tag</div>
+          </div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="titleUpdaterToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+
+      <div class="setting">
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Ctrl+K Global Search</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Opens the global search bar with Ctrl+K (or Cmd+K on Mac)</div>
+          </div>
+        </div>
         <label class="toggle-switch">
           <input type="checkbox" id="ctrlKToggle" checked>
           <span class="slider"></span>
@@ -34,7 +75,13 @@
       </div>
 
       <div class="setting">
-        <div class="setting-label">Alt+S Issue Spare</div>
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Alt+S Issue Spare</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Issue or return a spare from the ticket detail page with Alt+S</div>
+          </div>
+        </div>
         <label class="toggle-switch">
           <input type="checkbox" id="altSToggle" checked>
           <span class="slider"></span>
@@ -42,7 +89,13 @@
       </div>
 
       <div class="setting">
-        <div class="setting-label">Alt+R Resolve Ticket</div>
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Alt+R Resolve Ticket</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Resolves the ticket with Alt+R (auto confirms issue)</div>
+          </div>
+        </div>
         <label class="toggle-switch">
           <input type="checkbox" id="altRToggle" checked>
           <span class="slider"></span>
@@ -50,7 +103,13 @@
       </div>
 
       <div class="setting">
-        <div class="setting-label">Alt+C Confirm Issue</div>
+        <div class="setting-label-wrapper">
+          <div class="setting-label">Alt+C Confirm Issue</div>
+          <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-text">Confirms the issue with Alt+C</div>
+          </div>
+        </div>
         <label class="toggle-switch">
           <input type="checkbox" id="altCEToggle" checked>
           <span class="slider"></span>

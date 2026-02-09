@@ -18,6 +18,13 @@ body{width:340px;color:#222}
 .settings{display:flex;flex-direction:column;gap:10px}
 .setting{display:flex;align-items:center;justify-content:space-between;padding:10px;background:var(--card);border-radius:8px;border:1px solid rgba(16,24,40,0.04);box-shadow:0 1px 0 rgba(16,24,40,0.02)}
 .setting-label{font-size:13px;color:#111;font-weight:600}
+.setting-label-wrapper{display:flex;align-items:center;gap:6px}
+.tooltip-container{position:relative;display:inline-block}
+.tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:#d0d5dd;color:#111;border-radius:50%;font-size:11px;font-weight:700;cursor:help;transition:background 0.2s}
+.tooltip-icon:hover{background:var(--iiq-blue);color:white}
+.tooltip-text{visibility:hidden;background:#222;color:#fff;text-align:center;border-radius:6px;padding:6px 8px;position:absolute;z-index:1;bottom:125%;left:50%;transform:translateX(-50%);width:140px;font-size:11px;font-weight:400;white-space:normal;line-height:1.4;opacity:0;transition:opacity 0.2s}
+.tooltip-text::after{content:"";position:absolute;top:100%;left:50%;margin-left:-4px;border-width:4px 4px 0 4px;border-style:solid;border-color:#222 transparent transparent transparent}
+.tooltip-container:hover .tooltip-text{visibility:visible;opacity:1}
 
 /* Toggle */
 .toggle-switch{position:relative;display:inline-block;width:44px;height:24px}

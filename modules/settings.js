@@ -3,7 +3,9 @@ let settings = {
   disableFlyoutsEnabled: true,
   altSEnabled: true,
   altREnabled: true,
-  altCEndabled: true
+  altCEndabled: true,
+  copyButtonEnabled: true,
+  titleUpdaterEnabled: true
 };
 
 chrome.storage.sync.get({
@@ -11,5 +13,7 @@ chrome.storage.sync.get({
   disableFlyoutsEnabled: true,
   altSEnabled: true, 
   altREnabled: true, 
-  altCEndabled: true 
+  altCEndabled: true,
+  copyButtonEnabled: true,
+  titleUpdaterEnabled: true
 }, (items) => settings = items);

@@ -1,4 +1,4 @@
-# iiQ extension
+# iiQ Ticketing+
 
 A Utility extension for iiQ that enhances functionality and workflows.
 
