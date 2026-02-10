@@ -8,13 +8,18 @@
       return;
     }
 
+    openLinkInModal(link, link.title || link.text || 'Ticket Details');
+  }
+
+  function openLinkInModal(link, titleFallback) {
+    if (!link || !link.href) return;
     const modal = getOrCreateTicketModal();
     const iframe = modal.querySelector('iframe');
     const titleEl = modal.querySelector('[data-iiq-modal-title]');
 
     const resolvedUrl = new URL(link.href, window.location.origin).toString();
     iframe.src = resolvedUrl;
-    titleEl.textContent = link.title || link.text || 'Ticket Details';
+    titleEl.textContent = titleFallback || 'Ticket Details';
     showTicketModal(modal);
   }
 
@@ -106,12 +111,42 @@
 
   function handleCtrlClickPreview(e) {
     if (!e.ctrlKey) return;
+    const assetLink = getAssetOpenTicketsLink(e);
+    if (assetLink) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      openLinkInModal(assetLink, 'Open Tickets');
+      return;
+    }
+
     const row = e.target && e.target.closest ? e.target.closest('spark-grid-row') : null;
     if (!row) return;
     e.preventDefault();
     e.stopPropagation();
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     fetchAndRenderTicketForRow(row).catch(err => console.warn('iiq: ctrl click failed', err));
+  }
+
+  function getAssetOpenTicketsLink(event) {
+    if (!isAssetDetailsPage()) return null;
+    const container = document.querySelector('[ng-show1="$ctrl.Data.SummaryStats.OpenTickets > 0"]');
+    if (!container) return null;
+    if (!container.contains(event.target)) return null;
+
+    const anchor = container.getElementsByTagName('a')[0];
+    if (!anchor) return null;
+    const href = anchor.getAttribute('href') || anchor.href;
+    if (!href || href === '#' || href.startsWith('javascript:')) return null;
+    return {
+      href,
+      text: (anchor.textContent || '').trim(),
+      title: (anchor.getAttribute('title') || '').trim()
+    };
+  }
+
+  function isAssetDetailsPage() {
+    return /^\/agent\/assets\/.+/.test(window.location.pathname);
   }
 
   document.addEventListener('mousedown', handleCtrlClickPreview, true);
