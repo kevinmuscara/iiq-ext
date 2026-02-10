@@ -6,6 +6,8 @@ A utility extension for iiQ Ticketing that enhances functionality and workflows.
 
 - **Disabled flyouts**: Disable flyout/sidemenus that tend to glitch out when trying to navigate iiQ.
 
+- **Ticket Previewing**: Hold Ctrl and click on a ticket in a table to open a modal preview of the ticket.
+
 - **Copy Buttons**: Added a paperclip icon to the Asset Tag and Serial Number fields on asset information. (credit to [matthttam](https://github.com/matthttam))
 
 - **Ticket/Asset Title**: Renames the title of the tab when viewing an asset or ticket to the number (credit to [matthttam](https://github.com/matthttam))
@@ -25,8 +27,6 @@ A utility extension for iiQ Ticketing that enhances functionality and workflows.
 - **Pinned Header**: Keep asset/user header details pinned to the top view of the page so when scrolling, you can still see vital information.
 
 - **Hover Ticket Preview**: On an asset detail page, hover over the "1 open ticket" text to show a preview of the most recent submitted ticket so that you don't have to load an entire new page
-
-- **Right Click Actions**: Right click a ticket row to perform different actions (resolve, merge, re-assign, comment)
 
 - **Duplicate Entry Alert**: When searching and more than one matching entry shows up, a warning box will appear for you to proceed with caution.
 
